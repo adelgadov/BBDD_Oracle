@@ -5,7 +5,7 @@ $user = $_POST ['user'];
 $password = $_POST ['password'];
 $host = $_POST ['host'];
 $busqueda = $_POST ['consulta'];
-str_replace('"', "'", $busqueda);
+
 
 $datos = new bdatos($host, $user, $password, $busqueda);
 

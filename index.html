@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Form</title>
+	<meta charset="UTF-8">
+	<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#boton").click(function(event) {
+
+				$("#capa").load('procesar.php', {user:"system", password:"manager", consulta:"SELECT * FROM EMPLE", host:"localhost/XE"});
+
+			});
+		});
+	</script>
+
+	<title>Form</title>
 </head>
 <body>
-    <form method="POST" action="procesar.php">
-        <p>Usuario <input type="text" name="user"></p>
-        <p>Contraseña <input type="password" name="password"> </p>
-        <p>Consulta<input type="text" name="consulta"></p>
-        <p>Host <input type="text" name="host" value="localhost/XE"></p>
-        <p><input type="submit" value="Enviar" name="done"></p>
 
-    </form>
+<p>Usuario <input type="text" name="user"></p>
+<p>Contraseña <input type="password" name="password"> </p>
+<p>Consulta<input type="text" name="consulta"></p>
+<p>Host <input type="text" name="host" value="localhost/XE"></p>
+<p><input type="submit" value="Enviar" name="boton" id="boton"></p>
+<div id="capa" name="capa"></div>
+
+
+
 </body>
 </html>

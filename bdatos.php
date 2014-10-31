@@ -1,9 +1,12 @@
 <?php
+
+
 class bdatos {
 
 	public $host;
 	public $user;
 	public $password;
+
 
 
 
@@ -58,6 +61,7 @@ class bdatos {
             echo "</tr>\n";
         }
         echo "</table>\n";
+
 
 	}
 	}
