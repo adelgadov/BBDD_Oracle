@@ -4,10 +4,16 @@
 	<meta charset="UTF-8">
 	<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">
+
+
+
 		$(document).ready(function() {
 			$("#boton").click(function(event) {
-
-				$("#capa").load('procesar.php', {user:"system", password:"manager", consulta:"SELECT * FROM EMPLE", host:"localhost/XE"});
+                var user = document.getElementById('user').value;
+                var password = document.getElementById('password').value;
+                var consulta = document.getElementById('consulta').value;
+                var host = document.getElementById('host').value;
+				$("#capa").load('procesar.php', {user:user, password:password, consulta:consulta, host:host});
 
 			});
 		});
@@ -17,11 +23,11 @@
 </head>
 <body>
 
-<p>Usuario <input type="text" name="user"></p>
-<p>Contraseña <input type="password" name="password"> </p>
-<p>Consulta<input type="text" name="consulta"></p>
-<p>Host <input type="text" name="host" value="localhost/XE"></p>
-<p><input type="submit" value="Enviar" name="boton" id="boton"></p>
+<p>Usuario <input type="text" id="user" name="user" value="system"></p>
+<p>Contraseña <input type="password" name="password" id="password" value="manager"> </p>
+<p>Consulta<input type="text" name="consulta" id="consulta" value="SELECT * FROM EMPLE"></p>
+<p>Host <input type="text" name="host" id="host" value="localhost/XE"></p>
+<p><input type="submit" value="Enviar" name="boton" id="boton" onClick="mostrar()"></p>
 <div id="capa" name="capa"></div>
 
 
