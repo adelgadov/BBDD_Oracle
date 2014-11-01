@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link type="image/x-icon" href="images/fabicon.png" rel="shortcut icon" />
 	<meta charset="UTF-8">
-	<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript">
+<!--Para mover las tablas-->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/1.11.2-jquery-ui.js"></script>
 
-		$(document).ready(function() {
-			$("#boton").click(function(event) {
-                var user = document.getElementById('user').value;
-                var password = document.getElementById('password').value;
-                var consulta = document.getElementById('consulta').value;
-                var host = document.getElementById('host').value;
-                var posicion=document.getElementById('posicion').options[document.getElementById('posicion').selectedIndex].text;
 
-				$("#"+posicion).load('procesar.php', {user:user, password:password, consulta:consulta, host:host});
+<!--
+    <script src="js/z_index.js"></script>-->
+    <script src="js/pasar_datos.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" id="" media="print, projection, screen" />
 
-			});
-		});
-	</script>
-    <style type="text/css">
-        #capa {
-            position: absolute;
-            top: 30%;
-            left:2%;
-            max-width: 60%;
-            width: 53%;
-            max-height: 50%;
-            overflow: auto;
-
-        }
-        #capa2 {
-            position: absolute;
-            top: 30%;
-            left:56%;
-            max-width: 35%;
-            max-height: 50%;
-            overflow: auto;
-        }
-    </style>
-
-	<title>Form</title>
+	<title>Consultar BBDD</title>
 </head>
 <body>
 
-<p>Usuario <input type="text" id="user" name="user" value="system"></p>
-<p>Contraseña <input type="password" name="password" id="password" value="manager"> </p>
-<p>Consulta<textarea name="consulta" id="consulta">SELECT * FROM EMPLE</textarea></p>
-<p>Host <input type="text" name="host" id="host" value="localhost/XE"></p>
-<p>Mostrar en:  <select id="posicion">
-    <option value="capa">capa</option>
-    <option value="capa2">capa2</option>
-</select></p>
-<p><input type="submit" value="Enviar" name="boton" id="boton"></p>
-<div id="capa"></div>
-<div id="capa2"></div>
+<table class="formulario">
+    <tr>
+        <td>Usuario:</td>
+        <td><input type="text" id="user" name="user" value="system"></td>
+        <td>Host:</td>
+        <td><input type="text" name="host" id="host" value="localhost/XE"></td>
+
+    </tr>
+    <tr>
+        <td>Contraseña:</td>
+        <td><input type="password" name="password" id="password" value="manager"></td>
+        <td>Mostrar en:</td>
+        <td><select id="posicion"><option value="capa1">Primera capa</option></select>
+        <input type="button" id="crear_capa" value="Nueva capa" onclick="myFunction()"></td>
+    </tr>
+    <tr>
+        <td  style="height: 50px">Consulta:</td>
+        <td colspan="3"><textarea id="consulta">SELECT * FROM EMPLE</textarea></td>
+    </tr>
+    <tr>
+        <td colspan="4" style="height:30px"><input type="submit" value="Enviar" id="boton" name="boton"></td>
+    </tr>
+</table>
+
+
+
+<div id="capa1"></div>
+
 
 
 

@@ -19,7 +19,7 @@ class bdatos {
 
 	}
 
-	public function &conectar() {
+	public function conectar() {
 		$connection = oci_connect($this -> user, $this -> password, $this -> host, 'AL32UTF8');
 		return $connection;
 	}
@@ -31,37 +31,40 @@ class bdatos {
 	}
 	public function resultado ($query) {
 
-        echo "<table border='1'>\n";
+		?>	<table border="1" id="rowspan" class="tablesorter"><thead>	<?php
         $primera = oci_fetch_array($query, OCI_ASSOC+OCI_RETURN_NULLS);
 
         if ($primera) {
             $columna = array_keys($primera);
-        ?>
-            <tr class="titulo">
-        <?php
-        foreach ($columna as $campo): ?>
-            <th> <?php echo $campo; ?> </th>
+
+		?>  <tr>   <?php
+        foreach ($columna as $campo):
+
+			?>	<th>	<?php echo $campo; ?></th>
         <?php endforeach; ?>
             </tr>
 
-            <tr>
-                <?php foreach($primera as $valor): ?>
-                    <td> <?php echo $valor; ?> </td>
-                <?php endforeach ?>
-            </tr>
+            </thead><tbody>
+			<tr>
+				<?php foreach($primera as $valor): ?>
+
+					<td> <?php echo $valor; ?> </td>
+
+				<?php endforeach ?>
+			</tr>
         <?php
-        }
+        }?><?php
 
 
         while ($row = oci_fetch_array($query, OCI_ASSOC+OCI_RETURN_NULLS)) {
 
-            echo "<tr>";
+            ?> <tr> <?php
             foreach ($row as $key => $value) {
-                echo "<td>" . $value. "</td>";
+                ?> <td> <?php echo $value; ?> </td> <?php
             }
-            echo "</tr>";
+            ?> </tr> <?php
         }
-        echo "</table>";
+       ?> </tbody></table> <?php
 
 
 	}

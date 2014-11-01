@@ -1,4 +1,3 @@
-
 <?php
 include "bdatos.php";
 
@@ -17,15 +16,19 @@ $sentencia = $datos -> consulta($login, $busqueda);
 $tabla = $datos -> resultado($sentencia);
 
 ?>
-<style type="text/css">
-    tr:nth-child(odd) { background-color:#D2EAE8; }
 
-    tr:nth-of-type(odd) { background-color:#FFFFFF; }
+<link rel="stylesheet" href="css/style.css" type="text/css" id="" media="print, projection, screen" />
+<script type="text/javascript" src="js/jquery-latest.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
 
-    tr:nth-of-type(even) { background-color:#D2EAE8; }
 
-    .titulo {
-        color: #386639;
-        background-color: #9AEE9B;
-    }
-</style>
+
+<script type="text/javascript">
+	$(function() {
+		$("table").tablesorter({debug: true});
+	});
+	$(function() {
+		$( "table" ).resizable();
+	});
+</script>
+
