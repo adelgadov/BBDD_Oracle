@@ -5,19 +5,39 @@
 	<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">
 
-
-
 		$(document).ready(function() {
 			$("#boton").click(function(event) {
                 var user = document.getElementById('user').value;
                 var password = document.getElementById('password').value;
                 var consulta = document.getElementById('consulta').value;
                 var host = document.getElementById('host').value;
-				$("#capa").load('procesar.php', {user:user, password:password, consulta:consulta, host:host});
+                var posicion=document.getElementById('posicion').options[document.getElementById('posicion').selectedIndex].text;
+
+				$("#"+posicion).load('procesar.php', {user:user, password:password, consulta:consulta, host:host});
 
 			});
 		});
 	</script>
+    <style type="text/css">
+        #capa {
+            position: absolute;
+            top: 30%;
+            left:2%;
+            max-width: 60%;
+            width: 53%;
+            max-height: 50%;
+            overflow: auto;
+
+        }
+        #capa2 {
+            position: absolute;
+            top: 30%;
+            left:56%;
+            max-width: 35%;
+            max-height: 50%;
+            overflow: auto;
+        }
+    </style>
 
 	<title>Form</title>
 </head>
@@ -25,10 +45,15 @@
 
 <p>Usuario <input type="text" id="user" name="user" value="system"></p>
 <p>Contraseña <input type="password" name="password" id="password" value="manager"> </p>
-<p>Consulta<input type="text" name="consulta" id="consulta" value="SELECT * FROM EMPLE"></p>
+<p>Consulta<textarea name="consulta" id="consulta">SELECT * FROM EMPLE</textarea></p>
 <p>Host <input type="text" name="host" id="host" value="localhost/XE"></p>
-<p><input type="submit" value="Enviar" name="boton" id="boton" onClick="mostrar()"></p>
-<div id="capa" name="capa"></div>
+<p>Mostrar en:  <select id="posicion">
+    <option value="capa">capa</option>
+    <option value="capa2">capa2</option>
+</select></p>
+<p><input type="submit" value="Enviar" name="boton" id="boton"></p>
+<div id="capa"></div>
+<div id="capa2"></div>
 
 
 

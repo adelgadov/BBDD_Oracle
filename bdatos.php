@@ -20,7 +20,7 @@ class bdatos {
 	}
 
 	public function &conectar() {
-		$connection = oci_connect($this -> user, $this -> password, $this -> host);
+		$connection = oci_connect($this -> user, $this -> password, $this -> host, 'AL32UTF8');
 		return $connection;
 	}
 	public function consulta ($connection, $busqueda) {
@@ -54,13 +54,14 @@ class bdatos {
 
 
         while ($row = oci_fetch_array($query, OCI_ASSOC+OCI_RETURN_NULLS)) {
-            echo "<tr>\n";
+
+            echo "<tr>";
             foreach ($row as $key => $value) {
-                echo "    <td>" . ($value !== null ? htmlentities($value, ENT_QUOTES) : "") . "</td>\n";
+                echo "<td>" . $value. "</td>";
             }
-            echo "</tr>\n";
+            echo "</tr>";
         }
-        echo "</table>\n";
+        echo "</table>";
 
 
 	}
