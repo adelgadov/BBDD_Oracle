@@ -2,16 +2,19 @@
 <html>
 <head>
     <link type="image/x-icon" href="images/fabicon.png" rel="shortcut icon" />
-	<meta charset="UTF-8">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <meta charset="UTF-8">
 <!--Para mover las tablas-->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/1.11.2-jquery-ui.js"></script>
 
 
-<!--
-    <script src="js/z_index.js"></script>-->
+
+<!---->
+    <script src="js/z_index.js"></script>
     <script src="js/pasar_datos.js"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css" id="" media="print, projection, screen" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="print, projection, screen" />
 
 	<title>Consultar BBDD</title>
 </head>
@@ -37,32 +40,165 @@
         <td colspan="3"><textarea id="consulta">SELECT * FROM EMPLE</textarea></td>
     </tr>
     <tr>
-        <td colspan="4" style="height:30px"><input type="submit" value="Enviar" id="boton" name="boton" onclick="mover()"></td>
+        <td colspan="4" style="height:30px"><input type="submit" value="Enviar" id="boton" name="boton"></td>
     </tr>
 </table>
 
 
 
-<div id="capa1" class="draggable"></div>
-<div id="capa2" class="draggable"></div>
-<div id="capa3" class="draggable"></div>
-<div id="capa4" class="draggable"></div>
-<div id="capa5" class="draggable"></div>
-<div id="capa6" class="draggable"></div>
-<div id="capa7" class="draggable"></div>
-<div id="capa8" class="draggable"></div>
-<div id="capa9" class="draggable"></div>
-<div id="capa10" class="draggable"></div>
+<div class="draggable" style="display: inline;" id="uno">
+    <table style="border:1px solid black; padding: 0px; margin: 0px">
+        <tr>
+            <th style="text-align: left;border:1px solid black;">
+                <span>Capa 1</span>
 
+        </tr>
+        <tr>
+            <td>
+                <div id="capa1"></div>
+            </td>
+        </tr>
+    </table>
+</div >
+<div class="draggable" style="display: none;" id="dos">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 2</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa2"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="tres">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 3</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa3"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="cuatro">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 4</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa4"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="cinco">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 5</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa5"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="seis">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 6</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa6"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="siete">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 7</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa7"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="ocho">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 8</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa8"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="nueve">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 9</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa9"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="draggable" style="display: none;" id="diez">
+    <table>
+        <tr>
+            <th style="text-align: left">
+                <span>Capa 10</span>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="capa10"></div>
+            </td>
+        </tr>
+    </table>
+</div >
 
-
+<div id="escondido"></div>
 
 
 </body>
+
 <script type="text/javascript">
-    function mover() {
-    $(".draggable").draggable();
-    }
+
+    $(".draggable").draggable({handle:"span"});
+
+
+
+
 </script>
 
 </html>

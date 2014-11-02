@@ -2,6 +2,11 @@ body {
     background-image: url(../images/body_bg.png);
 }
 
+#escondido {
+
+    display: none;
+
+}
 .formulario {
     position: absolute;
     top:2%;

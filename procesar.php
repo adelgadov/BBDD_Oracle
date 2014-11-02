@@ -23,7 +23,7 @@ $tabla = $datos -> resultado($sentencia);
 
 
 
-<script type="text/javascript">
+<script type="text/javascript" id="">
 	$(function() {
 		$("table").tablesorter({debug: true});
 	});

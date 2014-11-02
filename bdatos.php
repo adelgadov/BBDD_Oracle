@@ -31,7 +31,7 @@ class bdatos {
 	}
 	public function resultado ($query) {
 		$foot = array();
-		?>	<table border="1" id="rowspan" class="tablesorter"><thead>	<?php
+		?><table border="1" id="rowspan" class="tablesorter"><thead>	<?php
         $primera = oci_fetch_array($query, OCI_ASSOC+OCI_RETURN_NULLS);
 
         if ($primera) {
