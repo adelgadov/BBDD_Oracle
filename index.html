@@ -37,16 +37,32 @@
         <td colspan="3"><textarea id="consulta">SELECT * FROM EMPLE</textarea></td>
     </tr>
     <tr>
-        <td colspan="4" style="height:30px"><input type="submit" value="Enviar" id="boton" name="boton"></td>
+        <td colspan="4" style="height:30px"><input type="submit" value="Enviar" id="boton" name="boton" onclick="mover()"></td>
     </tr>
 </table>
 
 
 
-<div id="capa1"></div>
+<div id="capa1" class="draggable"></div>
+<div id="capa2" class="draggable"></div>
+<div id="capa3" class="draggable"></div>
+<div id="capa4" class="draggable"></div>
+<div id="capa5" class="draggable"></div>
+<div id="capa6" class="draggable"></div>
+<div id="capa7" class="draggable"></div>
+<div id="capa8" class="draggable"></div>
+<div id="capa9" class="draggable"></div>
+<div id="capa10" class="draggable"></div>
+
 
 
 
 
 </body>
+<script type="text/javascript">
+    function mover() {
+    $(".draggable").draggable();
+    }
+</script>
+
 </html>

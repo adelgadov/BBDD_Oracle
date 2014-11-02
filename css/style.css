@@ -51,10 +51,8 @@ body {
 }
 
 div {
-    position: absolute;
-    top:50%;
 
-    display: inline-block;
+    display:inline-table;
 }
 
 
@@ -83,6 +81,8 @@ table.tablesorter {
 	font-size: 100%;
 	width: 100%;
 	text-align: left;
+    position: relative;
+    display: inline-block;
 }
 
 table.tablesorter thead tr .header {
