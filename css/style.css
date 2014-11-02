@@ -9,6 +9,7 @@ body {
     border: 1px solid;
     border-color: #3E6B56;
     border-collapse: collapse;
+
 }
 .formulario td {
     padding: 5px;
@@ -34,10 +35,9 @@ body {
 #boton {
     width: 100%;
     height: 100%;
-    background: #40ad93; /* Old browsers */
     border-radius: 15px;
     border-color: #9FB9AD;
-    background-color: #55C368;
+    background-color: #BFBFC1;
     background-image: url(../images/sql7.svg);
     background-repeat: no-repeat;
 }
@@ -45,8 +45,8 @@ body {
 #boton:hover {
     width: 100%;
     height: 100%;
-    background-color: #53866F;
-    background-image: url(../images/sql7.svg);
+    background-color: #D2D7EB;
+    background-image: url(../images/sql6.svg);
     background-repeat: no-repeat;
 }
 
@@ -56,21 +56,21 @@ div {
 }
 
 
-table.formulario tr:nth-child(odd) { background-color:#DFFDFF; }
+table.formulario tr:nth-child(odd),  table.formulario tr:nth-of-type(even) { background: #eee;}
 
-table.formulario tr:nth-of-type(odd) { background-color:#D4FDEA; }
-
-table.formulario tr:nth-of-type(even) { background-color:#DFFDFF; }
+table.formulario tr:nth-of-type(odd) { background-color:#FFFFFF; }
 
 
 
 
 
-table.tablesorter tr:nth-child(odd) { background-color:#BAD8CA; }
+
+
+table.tablesorter tr:nth-child(odd), table.tablesorter tr:nth-of-type(even) { background: #eee;}
 
 table.tablesorter tr:nth-of-type(odd) { background-color:#FFFFFF; }
 
-table.tablesorter tr:nth-of-type(even) { background-color:#BAD8CA; }
+
 
 
 
@@ -83,24 +83,37 @@ table.tablesorter {
 	text-align: left;
     position: relative;
     display: inline-block;
+    border-collapse: collapse;
 }
 
 table.tablesorter thead tr .header {
     padding: 2px 20px 2px 10px;
-    color: #386639;
-    background-color: #A5FFD5;
-	background-image: url(../images/bg.gif);
+    background: #555151;
+    color: white;
+    font-weight: bold;
+    background-image: url(../images/bg.gif);
 	background-repeat: no-repeat;
 	background-position: center right;
 	cursor: pointer;
 }
+table.tablesorter tfoot tr .header{
+    Background: #555151;
+    color: white;
+    font-weight: bold;
+}
+
+
 
 table.tablesorter thead tr .headerSortUp {
 	background-image: url(../images/asc.gif);
-    background-color: #9ABDAD;
+    background-color: #BCB4B4;
+    color: black;
+    font-weight: bold;
 }
 table.tablesorter thead tr .headerSortDown {
 	background-image: url(../images/desc.gif);
-    background-color: #9ABDAD;
+    background-color: #BCB4B4;
+    color: black;
+    font-weight: bold;
 }
 

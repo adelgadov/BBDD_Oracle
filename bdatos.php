@@ -30,7 +30,7 @@ class bdatos {
 		return $query;
 	}
 	public function resultado ($query) {
-
+		$foot = array();
 		?>	<table border="1" id="rowspan" class="tablesorter"><thead>	<?php
         $primera = oci_fetch_array($query, OCI_ASSOC+OCI_RETURN_NULLS);
 
@@ -40,13 +40,19 @@ class bdatos {
 		?>  <tr>   <?php
         foreach ($columna as $campo):
 
-			?>	<th>	<?php echo $campo; ?></th>
+			?>	<th>	<?php echo $campo; array_push($foot, $campo);?> </th>
         <?php endforeach; ?>
+
             </tr>
 
-            </thead><tbody>
+            </thead>
+			<tfoot><tr>
+			<?php for ($i = 0, $b = count($foot); $i < $b; $i++){
+				?> <th class="header"> <?php echo $foot[$i] ?></th> <?php
+			}?>
+			</tr></tfoot><tbody>
 			<tr>
-				<?php foreach($primera as $valor): ?>
+				<?php  foreach($primera as $valor): ?>
 
 					<td> <?php echo $valor; ?> </td>
 
@@ -56,10 +62,12 @@ class bdatos {
         }?><?php
 
 
+
+
         while ($row = oci_fetch_array($query, OCI_ASSOC+OCI_RETURN_NULLS)) {
 
             ?> <tr> <?php
-            foreach ($row as $key => $value) {
+            foreach ($row as  $value) {
                 ?> <td> <?php echo $value; ?> </td> <?php
             }
             ?> </tr> <?php
