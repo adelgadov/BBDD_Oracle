@@ -55,6 +55,39 @@ body {
     background-repeat: no-repeat;
 }
 
+.boton_cerrar{
+    background-color: #C74642;
+    color: white;
+    width: 40px;
+}
+.boton_cerrar:hover{
+    background-color: #FF5B55;
+    color: white;
+    width: 40px;
+}
+.boton_minimizar {
+    background-color: #C74642;
+    color: white;
+    width: 30px;
+}
+.boton_minimizar:hover{
+    background-color: #FF5B55;
+    color: white;
+    width: 30px;
+}
+.boton_maximizar {
+    background-color: #C74642;
+    color: white;
+    width: 30px;
+    display: none;
+}
+.boton_maximizar:hover{
+    background-color: #FF5B55;
+    color: white;
+    width: 30px;
+    display: none;
+}
+
 div {
 
     display:inline-table;
@@ -82,13 +115,14 @@ table.tablesorter tr:nth-of-type(odd) { background-color:#FFFFFF; }
 table.tablesorter {
 	font-family:arial;
 	background-color: #CDCDCD;
-	margin:15px 0px 15px;
+
 	font-size: 100%;
 	width: 100%;
 	text-align: left;
     position: relative;
     display: inline-block;
     border-collapse: collapse;
+    padding: 0px;
 }
 
 table.tablesorter thead tr .header {

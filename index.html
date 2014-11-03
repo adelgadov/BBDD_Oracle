@@ -12,6 +12,7 @@
 
 
 <!---->
+    <script src="js/botones.js"></script>
     <script src="js/z_index.js"></script>
     <script src="js/pasar_datos.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="print, projection, screen" />
@@ -40,147 +41,207 @@
         <td colspan="3"><textarea id="consulta">SELECT * FROM EMPLE</textarea></td>
     </tr>
     <tr>
-        <td colspan="4" style="height:30px"><input type="submit" value="Enviar" id="boton" name="boton"></td>
+        <td colspan="4" style="height:30px"><input type="submit" value="Enviar" id="boton" name="boton" onclick="enviar_datos()"></td>
     </tr>
 </table>
 
 
 
-<div class="draggable" style="display: inline;" id="uno">
-    <table style="border:1px solid black; padding: 0px; margin: 0px">
-        <tr>
-            <th style="text-align: left;border:1px solid black;">
+<div class="draggable" style="display: none;" id="uno">
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
+        <tr  bgcolor="#D3AD96">
+            <th style="text-align: right;">
                 <span>Capa 1</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar1" class="boton_minimizar" value="_" onclick="minimizar1()">
+                <input type="button" id="maximizar1" class="boton_maximizar" value="+" onclick="maximizar1()">
+                <input type="button" id="cerrar1" class="boton_cerrar" value="X" onclick="cerrar1()">
+            </th>
 
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa1"></div>
             </td>
         </tr>
     </table>
 </div >
+
 <div class="draggable" style="display: none;" id="dos">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 2</span>
             </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar2" class="boton_minimizar" value="_" onclick="minimizar2()">
+                <input type="button" id="maximizar2" class="boton_maximizar" value="+" onclick="maximizar2()">
+                <input type="button" id="cerrar2" class="boton_cerrar" value="X" onclick="cerrar2()">
+            </th>
+
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa2"></div>
             </td>
         </tr>
     </table>
 </div>
+
 <div class="draggable" style="display: none;" id="tres">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 3</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar3" class="boton_minimizar" value="_" onclick="minimizar3()">
+                <input type="button" id="maximizar3" class="boton_maximizar" value="+" onclick="maximizar3()">
+                <input type="button" id="cerrar3" class="boton_cerrar" value="X" onclick="cerrar3()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa3"></div>
             </td>
         </tr>
     </table>
 </div>
+
 <div class="draggable" style="display: none;" id="cuatro">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 4</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar4" class="boton_minimizar" value="_" onclick="minimizar4()">
+                <input type="button" id="maximizar4" class="boton_maximizar" value="+" onclick="maximizar4()">
+                <input type="button" id="cerrar4" class="boton_cerrar" value="X" onclick="cerrar4()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa4"></div>
             </td>
         </tr>
     </table>
 </div>
 <div class="draggable" style="display: none;" id="cinco">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 5</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar5" class="boton_minimizar" value="_" onclick="minimizar5()">
+                <input type="button" id="maximizar5" class="boton_maximizar" value="+" onclick="maximizar5()">
+                <input type="button" id="cerrar5" class="boton_cerrar" value="X" onclick="cerrar5()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa5"></div>
             </td>
         </tr>
     </table>
 </div>
+
 <div class="draggable" style="display: none;" id="seis">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 6</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar6" class="boton_minimizar" value="_" onclick="minimizar6()">
+                <input type="button" id="maximizar6" class="boton_maximizar" value="+" onclick="maximizar6()">
+                <input type="button" id="cerrar6" class="boton_cerrar" value="X" onclick="cerrar6()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa6"></div>
             </td>
         </tr>
     </table>
 </div>
+
 <div class="draggable" style="display: none;" id="siete">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 7</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar7" class="boton_minimizar" value="_" onclick="minimizar7()">
+                <input type="button" id="maximizar7" class="boton_maximizar" value="+" onclick="maximizar7()">
+                <input type="button" id="cerrar7" class="boton_cerrar" value="X" onclick="cerrar7()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa7"></div>
             </td>
         </tr>
     </table>
 </div>
+
 <div class="draggable" style="display: none;" id="ocho">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 8</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar8" class="boton_minimizar" value="_" onclick="minimizar8()">
+                <input type="button" id="maximizar8" class="boton_maximizar" value="+" onclick="maximizar8()">
+                <input type="button" id="cerrar8" class="boton_cerrar" value="X" onclick="cerrar8()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa8"></div>
             </td>
         </tr>
     </table>
 </div>
+
 <div class="draggable" style="display: none;" id="nueve">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 9</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar9" class="boton_minimizar" value="_" onclick="minimizar9()">
+                <input type="button" id="maximizar9" class="boton_maximizar" value="+" onclick="maximizar9()">
+                <input type="button" id="cerrar9" class="boton_cerrar" value="X" onclick="cerrar9()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa9"></div>
             </td>
         </tr>
     </table>
 </div>
+
 <div class="draggable" style="display: none;" id="diez">
-    <table>
+    <table bgcolor="#D3AD96" style="border-collapse: collapse">
         <tr>
-            <th style="text-align: left">
+            <th style="text-align: right">
                 <span>Capa 10</span>
+            </th>
+            <th style="text-align: right">
+                <input type="button" id="minimizar10" class="boton_minimizar" value="_" onclick="minimizar10()">
+                <input type="button" id="maximizar10" class="boton_maximizar" value="+" onclick="maximizar10()">
+                <input type="button" id="cerrar10" class="boton_cerrar" value="X" onclick="cerrar10()">
             </th>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 <div id="capa10"></div>
             </td>
         </tr>
@@ -194,7 +255,7 @@
 
 <script type="text/javascript">
 
-    $(".draggable").draggable({handle:"span"});
+    $(".draggable").draggable({handle:"th"});
 
 
 

@@ -1,8 +1,8 @@
 var capas = ["capa2", "capa3", "capa4", "capa5", "capa6", "capa7", "capa8", "capa9", "capa10"];
 
-$(document).ready(function() {
 
-    $("#boton").click(function(event) {
+
+    function enviar_datos() {
         var response;
         var user = document.getElementById('user').value;
         var password = document.getElementById('password').value;
@@ -25,6 +25,7 @@ $(document).ready(function() {
 
                 $("#capa1").prepend(response);
                 $("#oculto").empty();
+                $("#uno").css({display:"inline"});
                 break;
             case 'capa2':
                 $("#capa2").empty();
@@ -103,10 +104,10 @@ $(document).ready(function() {
 
 
 
-    });
+    }
 
 
-});
+
 
 
 var opcion_nombre;
