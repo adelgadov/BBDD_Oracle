@@ -3,6 +3,7 @@
 <head>
     <link type="image/x-icon" href="images/fabicon.png" rel="shortcut icon" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/content-assist.css">
 
     <meta charset="UTF-8">
 <!--Para mover las tablas-->
@@ -12,9 +13,12 @@
 
 
 <!---->
+    <script src="js/content-assist.js"></script>
+    <script src="js/Autocompletar.js"></script>
     <script src="js/botones.js"></script>
     <script src="js/z_index.js"></script>
     <script src="js/pasar_datos.js"></script>
+    <script src="js/editor_capas.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="print, projection, screen" />
 
 	<title>Consultar BBDD</title>
@@ -38,7 +42,7 @@
     </tr>
     <tr>
         <td  style="height: 50px">Consulta:</td>
-        <td colspan="3"><textarea id="consulta">SELECT * FROM EMPLE</textarea></td>
+        <td colspan="3"><textarea id="consulta" ></textarea></td>
     </tr>
     <tr>
         <td colspan="4" style="height:30px"><input type="button" value="Enviar" id="boton" name="boton" onclick="enviar_datos()"></td>
